@@ -28,17 +28,6 @@ MT_Vector2 MT_V2FromAngle_Rad(double angle, double magnitude)
 	return vec;
 }
 
-MT_Vector3 MT_V3FromAngle_Deg(double x_angle, double y_angle, double magnitude)
-{
-	MT_Vector3 result;
-
-	result.x = sin(MT_ToRadf(x_angle)) * cos(MT_ToRadf(y_angle)) * magnitude;
-	result.y = cos(MT_ToRadf(x_angle)) * sin(MT_ToRadf(y_angle)) * magnitude;
-	result.z = cos(MT_ToRadf(y_angle)) * magnitude;
-
-	return result;
-}
-
 /*Returns a vector that is the result og basic math operations*/
 MT_Vector2 MT_V2Sub(MT_Vector2 a, MT_Vector2 b)
 {
@@ -60,7 +49,7 @@ MT_Vector2 MT_V2Add(MT_Vector2 a, MT_Vector2 b)
 	return vec;
 }
 
-MT_Vector2 MT_V2Mult(MT_Vector2 vec, double scalar)
+MT_Vector2 MT_V2Scale(MT_Vector2 vec, double scalar)
 {
 	MT_Vector2 new_vec;
 
@@ -78,6 +67,11 @@ double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double angle)
 	mag_b = sqrt(MT_V2Mag(b));
 	result = mag_a * mag_b;
 	return (result * cos(angle));
+}
+
+double MT_V2Abs(MT_Vector2 a)
+{
+	return sqrt((a.x * a.x) + (a.y * a.y));
 }
 
 /* Returns the angle between two vectors */

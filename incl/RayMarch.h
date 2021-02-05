@@ -11,13 +11,20 @@
 # define Y_VIEWANGLE 45.0
 
 
-
 typedef struct
 {
     MT_Vector3 position;
 
     double  radius;
 } 			Sphere;
+
+//Measurement : x = w | y = h | z = l
+typedef struct
+{
+    MT_Vector3 position;
+
+	MT_Vector3 measurement;
+} 			Box;
 
 typedef struct
 {
@@ -29,8 +36,8 @@ typedef struct
 
 typedef struct
 {
-	Sphere scene;
-	Sphere scene1;
+	Sphere	scene;
+	Box		box;
 	Camera cam;
 }			Context;
 

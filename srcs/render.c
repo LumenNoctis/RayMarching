@@ -24,7 +24,7 @@ int march_ray(double x_offset, double y_offset, Context context)
     while (i < MAX_ITER)
     {
         distance = Sphere_SDF(tmp, context.scene);
-        distance = min(distance, Sphere_SDF(tmp, context.scene1));
+        distance = min(distance, Box_SDF(tmp, context.box));
 
 		// distance = Some_SDF(tmp);
 		if (distance < 0)
@@ -84,9 +84,7 @@ SDL_Texture	*draw_scene(SDLX_Display *display)
 			if (dist != MAX_ITER)
 			{
 				c = RGBA_to_int(dist * 20, dist * 20, dist * 20, 255);
-                //c = 0xFF000000;
-				// printf("%u\n", c);
-				// SDL_SetRenderDrawColor(display->renderer, dist * 20, dist * 20, dist * 20, 250);
+
 			}
 			set_pixel(surf, x, y, c);
 			//SDL_RenderDrawPoint(display->renderer, x, y);
