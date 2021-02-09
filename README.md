@@ -26,7 +26,7 @@ Shrink / Inflate : R, E
 ---
 
 
-![alt text]("./Ressources/Img1.png")
+![]("Ressources/Img1.png")
 
 ## TODO
 
