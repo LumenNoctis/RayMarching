@@ -21,6 +21,7 @@ Shoudl try to make made up SDFs and see what happens.
 ```
 Move with : WASD | Arrow keys
 Shrink / Inflate : R, E
+```
 
 ---
 
