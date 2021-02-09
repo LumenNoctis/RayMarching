@@ -2,7 +2,8 @@ NAME = RayMarch
 FLAGS =
 
 MT_FILES = 		\
-		MT_vec	\
+		MT_v2	\
+		MT_v3	\
 		MT		\
 
 SDLX_FILES = 		\
@@ -21,8 +22,10 @@ FILENAMES = 							\
 	$(addprefix MT/, $(MT_FILES))		\
 	$(addprefix SDLX/, $(SDLX_FILES))	\
 	dist_funcs							\
+	lighting							\
 	main								\
 	render								\
+	utils								\
 			
 
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(FILENAMES)))

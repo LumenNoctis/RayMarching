@@ -1,4 +1,4 @@
-#include "MT_vec.h"
+#include "MT_vec2.h"
 
 static double convert_180(double angle)
 {
@@ -59,19 +59,20 @@ MT_Vector2 MT_V2Scale(MT_Vector2 vec, double scalar)
 	return new_vec;
 }
 
-double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double angle)
+double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double* angle)
 {
-	double mag_a, mag_b, result;
-
-	mag_a = sqrt(MT_V2Mag(a));
-	mag_b = sqrt(MT_V2Mag(b));
-	result = mag_a * mag_b;
-	return (result * cos(angle));
+	if (angle != NULL)
+		return MT_V2Mag(a) * MT_V2Mag(a) * cos(*angle);
+	return (a.x * b.x) + (a.y * b.y);
 }
 
-double MT_V2Abs(MT_Vector2 a)
+MT_Vector2 MT_V2Abs(MT_Vector2 a)
 {
-	return sqrt((a.x * a.x) + (a.y * a.y));
+	MT_Vector2 result;
+
+	result.x = fabs(a.x);
+	result.y = fabs(a.y);
+	return result;
 }
 
 /* Returns the angle between two vectors */
@@ -121,10 +122,22 @@ MT_Vector2 MT_V2Invert(MT_Vector2 vec)
 	return new_vec;
 }
 
+//MT_Vector2 Normalize(MT_vector2 vec)
+//{
+//	MT_Vector2 result;
+//	double mag;
+
+//	mag = MT_V2Mag(vec);
+//	result.x = vec.x / mag;
+//	result.y = vec.y / mag;
+
+//	return result;
+//}
+
 /*Returns the square of the magnitude of a vector*/
 double MT_V2Mag(MT_Vector2 vec)
 {
-	return (MT_GetDistancef(0, vec.x, 0, vec.y));
+	return sqrt(MT_GetDistancef(0, vec.x, 0, vec.y));
 }
 
 /*Returns the angle of a vector relative to the x axis */

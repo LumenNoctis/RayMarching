@@ -2,15 +2,15 @@
 
 double SDF_Intersection(double a, double b)
 {
-	return (max(a, b));
+	return (MAX(a, b));
 }
 
 double SDF_Union(double a, double b)
 {
-	return (min(a, b));
+	return (MIN(a, b));
 }
 
 double SDF_Difference(double a, double b)
 {
-	return (max(a, -b));
+	return (MAX(a, -b));
 }

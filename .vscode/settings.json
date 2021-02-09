@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"complex": "c",
+		"cmath": "c"
+	},
+	"cSpell.words": [
+		"pixel",
+		"sdlx",
+		"set"
+	]
+}

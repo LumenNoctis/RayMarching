@@ -13,7 +13,7 @@ MT_Vector3 MT_V3Sub(MT_Vector3 a, MT_Vector3 b);
 MT_Vector3 MT_V3Add(MT_Vector3 a, MT_Vector3 b);
 MT_Vector3 MT_V3Scale(MT_Vector3 a, double scalar);
 
-double MT_V3Dot(MT_Vector3 a, MT_Vector3 b, double angle);
+double MT_V3Dot(MT_Vector3 a, MT_Vector3 b, double *angle);
 double MT_V3Abs(MT_Vector3 a);
 
 /* Returns the angle between two vectors */
@@ -27,6 +27,7 @@ MT_Vector3 MT_V3Rot_Rad(MT_Vector3 vec, double rot_angle);
 
 /*Returns a vector that is opposite to the one given*/
 MT_Vector3 MT_V3Invert(MT_Vector3 vec);
+MT_Vector3 MT_V3Normalize(MT_Vector3 vec);
 
 /*Returns the magnitude of a vector*/
 double MT_V3Mag(MT_Vector3 vec);
