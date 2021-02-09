@@ -30,14 +30,16 @@ Shrink / Inflate : R, E
 
 ## TODO
 
-[] -Rectangle SDF
 [] -Cone SDF
+
 [] -Capsule SDF
+
 [] -Taurus SDF
 
 [] -Smoothing
-[] -Proper Camera movement
-[] -Proper camera rotatation
+
 [] -Take control of any shape within simulation
+
 [] -Up down and rotation of selected shape
+
 [] -Select and move object with mouse
