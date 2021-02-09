@@ -1,14 +1,27 @@
 /// This header consists of basic mathematical functions not present in math.h
 /// Most of the functions below are simple conversions
 
-#ifndef MISC_H
-# define MISC_H
+#ifndef MT_H
+# define MT_H
+
 # include <math.h>
+# include <stddef.h>
 # include "MT_structs.h"
 
 # ifndef M_PI
 #  define M_PI (3.14159265358979323846)
 # endif
+
+# define MAX(a, b)\
+({ 	__typeof__ (a) _a = (a);\
+	__typeof__ (b) _b = (b);\
+	(_a > _b) ? (a) : (b);})\
+
+# define MIN(a, b)\
+({ 	__typeof__ (a) _a = (a);\
+	__typeof__ (b) _b = (b);\
+	(_a < _b) ? (a) : (b);})\
+
 /* Converts degrees to radians*/
 int		MT_ToRad(int angle);
 double	MT_ToRadf(double angle);

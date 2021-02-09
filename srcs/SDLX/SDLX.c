@@ -14,30 +14,26 @@ void SDLX_InputLoop(void)
 	keystate = SDL_GetKeyboardState(NULL);
 
     if(keystate[SDL_SCANCODE_W])
-		ctx->cam.position.z += 0.5;
+		ctx->cam.position.z += 1.5;
     if(keystate[SDL_SCANCODE_S])
-		ctx->cam.position.z -= 0.5;
+		ctx->cam.position.z -= 1.5;
     if(keystate[SDL_SCANCODE_D])
-		ctx->cam.position.x += 0.5;
+		ctx->cam.position.x += 1.5;
     if(keystate[SDL_SCANCODE_A])
-		ctx->cam.position.x -= 0.5;
+		ctx->cam.position.x -= 1.5;
     if(keystate[SDL_SCANCODE_SPACE])
-		ctx->cam.position.z += 0.5;
+		ctx->cam.position.y += 1.5;
     if(keystate[SDL_SCANCODE_X])
-		ctx->cam.position.z -= 0.5;
+		ctx->cam.position.y -= 1.5;
 
     if(keystate[SDL_SCANCODE_LEFT])
-		ctx->scene.position.x -= 0.5;
+		ctx->cam.x_angle -= 3;
     if(keystate[SDL_SCANCODE_RIGHT])
-		ctx->scene.position.x += 0.5;
+		ctx->cam.x_angle += 3;
     if(keystate[SDL_SCANCODE_UP])
-		ctx->scene.position.z += 0.5;
+		ctx->cam.y_angle += 3;
     if(keystate[SDL_SCANCODE_DOWN])
-		ctx->scene.position.z -= 0.5;
-    if(keystate[SDL_SCANCODE_E])
-		ctx->scene.radius += 1;
-    if(keystate[SDL_SCANCODE_R])
-		ctx->scene.radius -= 1;
+		ctx->cam.y_angle -= 3;
 	
 	while (SDL_PollEvent(&event))
 	{

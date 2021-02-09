@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e" modified="2021-02-05T06:48:11.768Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="u-yF0cjmBLdkjoEXdPms" version="13.10.0" type="embed">
+    <diagram id="ojt-hb7Q0SSmXPGsziqS" name="Efficiency">
+        <mxGraphModel dx="1192" dy="1771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="210" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;h1&gt;Rendering in a more efficient way?&lt;/h1&gt;&lt;p&gt;Instead of looping over all the shapes in the simulation an getting the minimum for each pixel on the screen, it might be better to divide the screen into x amount of cubes, and put a reference to a shape that inhabits the cube.&amp;nbsp;&lt;br&gt;&lt;br&gt;It might or might not be more efficient depending on how hard it is to determine what cubes a shape belongs into.&lt;br&gt;&lt;br&gt;Then one would only need to loop over the shapes within a cube and take the minimum.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="-1090" width="360" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;br&gt;&lt;br&gt;" style="html=1;whiteSpace=wrap;container=1;recursiveResize=0;collapsible=0;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="-860" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="triangle;html=1;whiteSpace=wrap;" parent="7" vertex="1">
+                    <mxGeometry x="10" y="10" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Shape&lt;br&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="7" vertex="1">
+                    <mxGeometry x="30" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="void *Data;&lt;br&gt;void (*sdf)(cam, data)&lt;br&gt;Vector3 (*partition)(data, Vector 3 partition_data)" style="rounded=0;whiteSpace=wrap;html=1;" parent="7" vertex="1">
+                    <mxGeometry x="15" y="50" width="135" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="3d array of shapes&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="255" y="-820" width="110" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=classic;html=1;" parent="1" source="10" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="-800" as="sourcePoint"/>
+                        <mxPoint x="400" y="-870" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="Each shape is a void * containing the data necessary&lt;br&gt;and has its own SDF" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="-890" width="300" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
