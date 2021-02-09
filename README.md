@@ -16,4 +16,27 @@ Shapes are displayed with concentric circles and in general the displaying is a 
 
 Box is choppy and doesn't display well when zoomed in under light
 
+Shoudl try to make made up SDFs and see what happens.
+
+```
+Move with : WASD | Arrow keys
+Shrink / Inflate : R, E
+
+---
+
+
 ![]("Ressources/Img1.png")
+
+## TODO
+
+[] -Rectangle SDF
+[] -Cone SDF
+[] -Capsule SDF
+[] -Taurus SDF
+
+[] -Smoothing
+[] -Proper Camera movement
+[] -Proper camera rotatation
+[] -Take control of any shape within simulation
+[] -Up down and rotation of selected shape
+[] -Select and move object with mouse
