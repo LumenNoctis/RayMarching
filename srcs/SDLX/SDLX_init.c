@@ -2,7 +2,7 @@
 
 void	SDLX_close(void)
 {
-	SDL_DestroyWindow(get_display()->window);
+	SDL_DestroyWindow(SDLX_get_display()->window);
 	SDL_Quit();
 }
 
@@ -23,7 +23,7 @@ void	SDLU_start(SDLX_Display *dest)
 	atexit(SDLX_close);
 }
 
-SDLX_Display	*get_display(void)
+SDLX_Display	*SDLX_get_display(void)
 {
 	static SDLX_Display	display;
 

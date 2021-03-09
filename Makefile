@@ -1,6 +1,5 @@
 NAME = RayMarch
 FLAGS =
-
 MT_FILES = 		\
 		MT_v2	\
 		MT_v3	\

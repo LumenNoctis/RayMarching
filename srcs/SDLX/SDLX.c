@@ -14,17 +14,17 @@ void SDLX_InputLoop(void)
 	keystate = SDL_GetKeyboardState(NULL);
 
     if(keystate[SDL_SCANCODE_W])
-		ctx->cam.position.z += 1.5;
+		ctx->cam.position.z += 6;
     if(keystate[SDL_SCANCODE_S])
-		ctx->cam.position.z -= 1.5;
+		ctx->cam.position.z -= 6;
     if(keystate[SDL_SCANCODE_D])
-		ctx->cam.position.x += 1.5;
+		ctx->cam.position.x += 6;
     if(keystate[SDL_SCANCODE_A])
-		ctx->cam.position.x -= 1.5;
+		ctx->cam.position.x -= 6;
     if(keystate[SDL_SCANCODE_SPACE])
-		ctx->cam.position.y += 1.5;
+		ctx->cam.position.y += 6;
     if(keystate[SDL_SCANCODE_X])
-		ctx->cam.position.y -= 1.5;
+		ctx->cam.position.y -= 6;
 
     if(keystate[SDL_SCANCODE_LEFT])
 		ctx->cam.x_angle -= 3;
@@ -43,16 +43,39 @@ void SDLX_InputLoop(void)
 	}
 }
 
+void draline(void)
+{
+	int x, y;
+	SDLX_Display *display;
+
+	display = SDLX_get_display();
+	y = 0 ;
+	SDL_SetRenderDrawColor(display->renderer, 0, 255, 0, 255);
+	while ( y < 20)
+	{
+		x = 0;
+		while ( x < 20)
+		{
+			SDL_RenderDrawLine(display->renderer, (WIN_H / 20) * x, 0, (WIN_H / 20) * x, WIN_H);
+			x++;
+		}
+		SDL_RenderDrawLine(display->renderer, 0, (WIN_H / 20) * y, WIN_W,(WIN_H / 20) * y);
+		y++;
+	}
+	SDL_SetRenderDrawColor(display->renderer, 0, 0, 0, 255);
+}
+
 void SDLX_RenderLoop(void)
 {	
 	SDLX_Display *display;
     SDL_Texture     *tex;
+	int x; int y;
 
-	display = get_display();
+
+	display = SDLX_get_display();
 	tex = draw_scene(display);
-	//draw_scene(display);
     SDL_RenderCopy(display->renderer, tex, NULL, NULL);
-	// SDL_RenderCopy(display->renderer, draw_scene(display), NULL, NULL);
+	//draline();
 	SDL_RenderPresent(display->renderer);
 	SDL_RenderClear(display->renderer);
 }
