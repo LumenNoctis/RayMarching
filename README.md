@@ -27,16 +27,16 @@ Shrink / Inflate : R, E
 
 ## TODO
 
-[] -Cone SDF
+[ ] -Cone SDF
 
-[] -Capsule SDF
+[ ] -Capsule SDF
 
-[] -Taurus SDF
+[ ] -Taurus SDF
 
-[] -Smoothing
+[ ] -Smoothing
 
-[] -Take control of any shape within simulation
+[ ] -Take control of any shape within simulation
 
-[] -Up down and rotation of selected shape
+[ ] -Up down and rotation of selected shape
 
-[] -Select and move object with mouse
+[ ] -Select and move object with mouse
